@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kakobuy Spreadsheet | Clothing, Shoes &amp; Shopping Guides</title>
+<meta name="description" content="Browse Kakobuy Spreadsheet categories for shoes, hoodies, jackets and more, then use 20 guides to compare sizing, shortlist finds and plan an order.">
+<meta name="theme-color" content="#15171e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kakobuy Spreadsheet | Clothing, Shoes &amp; Shopping Guides">
+<meta property="og:description" content="Find ten product categories and twenty practical shopping guides in one place.">
+<style>
+:root{color-scheme:light;--paper:#f7f7f1;--ink:#15171e;--muted:#535762;--line:#d9dad1;--lime:#e5fa48;--violet:#6342ee}
+*{box-sizing:border-box}
+html{scroll-padding-top:5rem}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,sans-serif}
+a{color:inherit;overflow-wrap:anywhere}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b179ff;outline-offset:4px}
+button,summary{cursor:pointer;font:inherit}
+.wrap{width:min(1120px,calc(100% - 2rem));margin-inline:auto}
+.skip{position:fixed;z-index:12;top:.5rem;left:.5rem;padding:.5rem 1rem;background:white;color:var(--ink);transform:translateY(-200%)}
+.skip:focus{transform:none}
+.top{position:sticky;top:0;z-index:5;background:rgba(21,23,30,.94);color:white;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #ffffff24}
+.bar{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+.brand{font-size:.9rem;font-weight:900;letter-spacing:.065em;text-decoration:none}
+.brand b{color:var(--lime)}
+.desktop{display:flex;align-items:center;gap:1.1rem;font-size:.88rem;font-weight:700}
+.desktop>a{text-decoration:none}
+details{position:relative}
+summary{list-style:none;white-space:nowrap}
+summary::-webkit-details-marker{display:none}
+summary::after{content:" ▾";color:var(--lime)}
+.dropdown{position:absolute;right:0;top:calc(100% + .9rem);min-width:210px;max-height:calc(100vh - 80px);overflow:auto;margin:0;padding:.4rem;list-style:none;background:#22242e;color:white;border:1px solid #4a4c56;border-radius:.85rem;box-shadow:0 14px 35px #0004}
+.dropdown a{display:block;padding:.4rem .65rem;text-decoration:none;border-radius:.45rem}
+.dropdown a:hover,.dropdown a:focus-visible{background:#3b3d4c}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:var(--lime);margin-top:1rem;border-radius:1.25rem;padding:clamp(1.35rem,4vw,3.1rem);min-height:310px;display:grid;align-items:center}
+.hero-art{position:absolute;inset:0 0 0 auto;width:58%;height:100%;z-index:-1}
+.hero-copy{max-width:59%}
+.eyebrow{font-size:.72rem;font-weight:850;text-transform:uppercase;letter-spacing:.14em;margin:0 0 .6rem}
+h1,h2,p{margin-top:0}
+h1{font-size:clamp(2.15rem,6.5vw,5rem);letter-spacing:-.075em;line-height:.95;margin-bottom:.85rem}
+.hero p:not(.eyebrow){max-width:35ch;margin-bottom:1rem}
+.actions{display:flex;flex-wrap:wrap;gap:.55rem}
+.button{display:inline-flex;align-items:center;gap:.45rem;min-height:44px;border:2px solid var(--ink);border-radius:.55rem;padding:.55rem .8rem;background:var(--ink);color:white;font-size:.86rem;font-weight:800;text-decoration:none}
+.button.alt{background:var(--paper);color:var(--ink)}
+.button:hover{background:var(--violet);border-color:var(--violet);color:white}
+.section{padding-top:1.8rem}
+.section h2{font-size:clamp(1.65rem,4vw,2.55rem);letter-spacing:-.055em;line-height:1;margin-bottom:.45rem}
+.section .intro{color:var(--muted);margin-bottom:.85rem}
+.tiles,.guides{display:grid;gap:.55rem;margin:0;padding:0;list-style:none}
+.tiles{grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr))}
+.guides{grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));counter-reset:guide}
+.tiles a,.guides a{display:flex;align-items:center;gap:.6rem;min-height:48px;height:100%;padding:.65rem .8rem;background:#fff;border:1px solid var(--line);border-radius:.6rem;font-weight:750;text-decoration:none;font-size:.9rem}
+.tiles a:hover,.guides a:hover{border-color:var(--violet);color:#4324c4}
+.tiles a::after,.guides a::after{content:"↗";margin-left:auto;color:#4324c4}
+.guides li{counter-increment:guide}
+.guides a::before{content:counter(guide,decimal-leading-zero);color:#4324c4;font:700 .72rem/1 system-ui}
+footer{margin-top:1.8rem;border-top:1px solid var(--line);padding:1rem 0 1.25rem;color:var(--muted);font-size:.82rem}
+.app-nav,dialog{display:none}
+@media(max-width:650px){
+  .desktop>a{display:none}
+  .enhanced .desktop{display:none}
+  .hero{min-height:0}
+  .hero-copy{max-width:100%;position:relative}
+  .hero-art{width:82%;opacity:.24}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .enhanced body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  .enhanced .app-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:6;justify-content:space-around;align-items:center;background:rgba(21,23,30,.95);color:white;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:.35rem .5rem calc(.35rem + env(safe-area-inset-bottom));border-top:1px solid #ffffff30}
+  .app-nav a,.app-nav button{display:grid;justify-items:center;align-content:center;min-height:48px;min-width:74px;color:inherit;background:none;border:0;border-radius:.5rem;font-size:.76rem;font-weight:750;text-decoration:none}
+  .app-nav span{color:var(--lime);font-size:1rem}
+}
+dialog[open]{display:block;position:fixed;inset:auto 0 0;margin:0 auto;width:min(100%,540px);max-width:none;max-height:80vh;max-height:80dvh;overflow:auto;padding:.9rem 1rem calc(1rem + env(safe-area-inset-bottom));border:1px solid #ffffff30;border-radius:1.2rem 1.2rem 0 0;background:#191b25;color:#fff}
+dialog::backdrop{background:#10111799}
+.sheet-handle{width:2.4rem;height:4px;margin:0 auto .65rem;border-radius:1rem;background:#9c9fae}
+.sheet-title{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:.65rem}
+.sheet-title h2{margin:0;font-size:1.2rem}
+.sheet-title button{min-height:44px;padding:0 .85rem;background:var(--lime);color:var(--ink);border:0;border-radius:.5rem;font-weight:800}
+.sheet-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;margin:0;padding:0;list-style:none}
+.sheet-links a{display:flex;align-items:center;min-height:44px;padding:.4rem .6rem;border-radius:.45rem;background:#303342;text-decoration:none;font-size:.86rem}
+</style>
+<link rel="canonical" href="https://litbuykakobuy.github.io/jdjdx/">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html">KAKOBUY<b> / </b>SPREADSHEET</a>
+    <nav class="desktop" aria-label="Main navigation">
+      <a href="#guides">Shopping guides</a>
+      <details id="category-menu">
+        <summary>Categories</summary>
+        <ul class="dropdown">
+          <li><a href="https://findsspreadsheet.net/category-911-Shoes.html" target="_blank" rel="noopener nofollow">Shoes</a></li>
+          <li><a href="https://findsspreadsheet.net/search-912/name/Shoes.html" target="_blank" rel="noopener nofollow">Hoodies/Sweaters</a></li>
+          <li><a href="https://findsspreadsheet.net/search-913/name/Shoes.html" target="_blank" rel="noopener nofollow">T-Shirts</a></li>
+          <li><a href="https://findsspreadsheet.net/search-914/name/Shoes.html" target="_blank" rel="noopener nofollow">Jackets</a></li>
+          <li><a href="https://findsspreadsheet.net/search-915/name/Shoes.html" target="_blank" rel="noopener nofollow">Pants/Shorts</a></li>
+          <li><a href="https://findsspreadsheet.net/search-916/name/Shoes.html" target="_blank" rel="noopener nofollow">Headwear</a></li>
+          <li><a href="https://findsspreadsheet.net/search-917/name/Shoes.html" target="_blank" rel="noopener nofollow">Sets</a></li>
+          <li><a href="https://findsspreadsheet.net/search-918/name/Shoes.html" target="_blank" rel="noopener nofollow">underwear/underpants</a></li>
+          <li><a href="https://findsspreadsheet.net/search-919/name/Shoes.html" target="_blank" rel="noopener nofollow">Jersey</a></li>
+          <li><a href="https://findsspreadsheet.net/search-920/name/Shoes.html" target="_blank" rel="noopener nofollow">Accessories</a></li>
+        </ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <svg class="hero-art" viewBox="0 0 640 350" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <pattern id="grid" width="29" height="29" patternUnits="userSpaceOnUse">
+          <path d="M29 0H0v29" fill="none" stroke="#fff" stroke-opacity=".26"/>
+        </pattern>
+      </defs>
+      <path d="M200 0H640V350H18Z" fill="#6948ef"/>
+      <path d="M200 0H640V350H18Z" fill="url(#grid)"/>
+      <circle cx="426" cy="177" r="133" fill="none" stroke="#fff" stroke-opacity=".5"/>
+      <circle cx="426" cy="177" r="100" fill="none" stroke="#fff" stroke-opacity=".5"/>
+      <path d="m540 48 6 17 18 6-18 6-6 17-6-17-18-6 18-6ZM223 218l5 13 13 5-13 5-5 13-5-13-13-5 13-5Z" fill="#e5fa48"/>
+      <g transform="rotate(-12 421 174)" stroke="#15171e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M250 211c30-3 57-11 76-29l49-49c15-15 33-18 50-8l33 24 44-43c12-12 28-8 34 8l25 73c5 16-5 32-23 35l-48 8-219 20c-19 2-32-7-33-19-1-9 3-16 12-20Z" fill="#fff"/>
+        <path d="m250 211 55-13 28 22-63 8c-13 1-26-1-32-7m166-97 54 25 26-25 27 50-82 34-55-7 37-42Z" fill="#e5fa48"/>
+        <path d="m343 171 29 13m-14-27 30 12m-15-26 30 11m-148 78 240-21 55-11" fill="none"/>
+        <path d="m470 165 48-28 16 33-34 13-41 8Z" fill="#987fff"/>
+      </g>
+    </svg>
+    <div class="hero-copy">
+      <p class="eyebrow">The streetwear index</p>
+      <h1 id="hero-title">Kakobuy<br>Spreadsheet</h1>
+      <p>Browse ten clothing and accessory categories, then use our shopping guides to compare sizing and build a shortlist.</p>
+      <div class="actions">
+        <a class="button" href="https://findsspreadsheet.net/" target="_blank" rel="noopener nofollow">kakobuy spreadsheet <span aria-hidden="true">↗</span></a>
+        <a class="button alt" href="https://findsspreadsheet.net/" target="_blank" rel="noopener nofollow">buy it now <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="categories" aria-labelledby="categories-title">
+    <p class="eyebrow">01 / Browse</p>
+    <h2 id="categories-title">Product categories</h2>
+    <p class="intro">Each category opens its collection in a new tab.</p>
+    <ul class="tiles">
+      <li><a href="https://findsspreadsheet.net/category-911-Shoes.html" target="_blank" rel="noopener nofollow">Shoes</a></li>
+      <li><a href="https://findsspreadsheet.net/search-912/name/Shoes.html" target="_blank" rel="noopener nofollow">Hoodies/Sweaters</a></li>
+      <li><a href="https://findsspreadsheet.net/search-913/name/Shoes.html" target="_blank" rel="noopener nofollow">T-Shirts</a></li>
+      <li><a href="https://findsspreadsheet.net/search-914/name/Shoes.html" target="_blank" rel="noopener nofollow">Jackets</a></li>
+      <li><a href="https://findsspreadsheet.net/search-915/name/Shoes.html" target="_blank" rel="noopener nofollow">Pants/Shorts</a></li>
+      <li><a href="https://findsspreadsheet.net/search-916/name/Shoes.html" target="_blank" rel="noopener nofollow">Headwear</a></li>
+      <li><a href="https://findsspreadsheet.net/search-917/name/Shoes.html" target="_blank" rel="noopener nofollow">Sets</a></li>
+      <li><a href="https://findsspreadsheet.net/search-918/name/Shoes.html" target="_blank" rel="noopener nofollow">underwear/underpants</a></li>
+      <li><a href="https://findsspreadsheet.net/search-919/name/Shoes.html" target="_blank" rel="noopener nofollow">Jersey</a></li>
+      <li><a href="https://findsspreadsheet.net/search-920/name/Shoes.html" target="_blank" rel="noopener nofollow">Accessories</a></li>
+    </ul>
+  </section>
+  <section class="section" id="guides" aria-labelledby="guides-title">
+    <p class="eyebrow">02 / Read</p>
+    <h2 id="guides-title">Kakobuy Spreadsheet guides</h2>
+    <p class="intro">Measure what you own, compare listings and check the details before ordering.</p>
+    <ol class="guides">
+      <li><a href="articles/kakobuy-spreadsheet-beginners.html">How to use a Kakobuy spreadsheet</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-shoes.html">How to compare shoe sizes</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-hoodies.html">How to find a hoodie that fits</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-t-shirts.html">How to compare T-shirt fits</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-jackets.html">How to size a jacket for layering</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-pants-shorts.html">How to measure pants and shorts</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-headwear.html">How to measure for hats and caps</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-sets.html">How to size matching sets</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-underwear.html">How to compare underwear sizing</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-jerseys.html">How to choose a jersey fit</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-accessories.html">How to check accessory dimensions</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-size-charts.html">How to read garment size charts</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-qc-photos.html">What to check in product photos</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-budget.html">How to build an order budget</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-shipping.html">How to compare shipping estimates</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-fabrics.html">How to compare fabric descriptions</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-shortlist.html">How to organize a shopping shortlist</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-listings.html">How to compare similar listings</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-capsule.html">How to plan a streetwear capsule</a></li>
+      <li><a href="articles/kakobuy-spreadsheet-order-checklist.html">What to check before ordering</a></li>
+    </ol>
+  </section>
+</main>
+<footer><div class="wrap">Kakobuy Spreadsheet <span aria-hidden="true">/</span> Category directory and shopping guides</div></footer>
+<nav class="app-nav" aria-label="Mobile navigation">
+  <a href="index.html"><span aria-hidden="true">⌂</span>Home</a>
+  <button id="open-sheet" type="button" aria-haspopup="dialog" aria-controls="category-sheet"><span aria-hidden="true">▦</span>Categories</button>
+  <a href="#guides"><span aria-hidden="true">≡</span>Guides</a>
+</nav>
+<dialog id="category-sheet" aria-labelledby="sheet-title">
+  <div class="sheet-handle" aria-hidden="true"></div>
+  <div class="sheet-title">
+    <h2 id="sheet-title">Product categories</h2>
+    <form method="dialog"><button type="submit" autofocus>Close</button></form>
+  </div>
+  <ul class="sheet-links"></ul>
+</dialog>
+<script>
+const menu = document.getElementById('category-menu');
+const sheet = document.getElementById('category-sheet');
+const trigger = document.getElementById('open-sheet');
+
+document.addEventListener('click', event => {
+  if (menu.open && !menu.contains(event.target)) menu.open = false;
+});
+menu.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menu.open) {
+    menu.open = false;
+    menu.querySelector('summary').focus();
+  }
+});
+
+if (typeof sheet.showModal === 'function') {
+  const sheetLinks = sheet.querySelector('.sheet-links');
+  for (const item of menu.querySelectorAll('li')) sheetLinks.append(item.cloneNode(true));
+  const mobile = matchMedia('(max-width: 650px)');
+  trigger.addEventListener('click', () => sheet.showModal());
+  sheet.addEventListener('close', () => {
+    if (mobile.matches) trigger.focus();
+  });
+  mobile.addEventListener('change', event => {
+    if (!event.matches && sheet.open) {
+      sheet.close();
+      menu.querySelector('summary').focus();
+    }
+  });
+  document.documentElement.classList.add('enhanced');
+}
+</script>
+</body>
+</html>
